@@ -1,0 +1,15 @@
+services:
+  personal-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: personal-website
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./src:/usr/share/nginx/html
+
+    restart: unless-stopped
